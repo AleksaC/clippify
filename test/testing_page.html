@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="testing_page.css" />
+    <script src="testing_page.js" type="text/javascript" defer></script>
+    <title>Testing page</title>
+  </head>
+  <body>
+    <pre>
+      <code class="loc">
+        This page is a line of code
+      </code>
+    </pre>
+    This is a block of code:
+    <pre>
+      <code class="code-block">
+        <span>from nnlib.datasets import mnist</span>
+        <span>from nnlib.core import Model</span>
+        <span>from nnlib.layers.core import FullyConnected</span>
+        <span>from nnlib.optimizers import SGD</span>
+
+        <span>model = Model(</span>
+        <span class="indented">FullyConnected(256, activation="relu", input_shape=(784,), weight_initializer="he_normal"),</span>
+        <span class="indented">FullyConnected(128, activation="relu", weight_initializer="he_normal"),</span>
+        <span class="indented">FullyConnected(10, weight_initializer="xavier_normal"),</span>
+        <span class="indented">loss="softmax_crossentropy",</span>
+        <span class="indented">optimizer=SGD(lr=4e-2, decay=2e-4)</span>
+        <span>)</span>
+
+        <span>model.summary()</span>
+        <span>model.train(*mnist.training_data(flat=True), batch_size=64,epochs=10)</span>
+        <span>model.test(*mnist.test_data(flat=True), logging_level=1)</span>
+      </code>
+    </pre>
+    This is <code>inline</code> code.
+    <div id="insert-here"></div>
+  </body>
+</html>

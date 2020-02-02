@@ -1,0 +1,48 @@
+.copy-plugin-button-ref {
+  all: initial !important;
+  width: 100% !important;
+  height: 0 !important;
+  position: relative !important;
+  display: block !important;
+}
+
+.copy-plugin-button {
+  all: initial !important;
+  opacity: 0 !important;
+  transition: opacity 0.1s !important;
+  top: 5px !important;
+  right: 5px !important;
+  position: absolute !important;
+  padding: 2px 1px 2px 3px !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  max-width: 25px !important;
+  max-height: 25px !important;
+  border: 1px outset black !important;
+  border-radius: 3px !important;
+  cursor: pointer !important;
+  background-color: white !important;
+  box-shadow: none !important;
+}
+
+.copy-plugin-button:hover {
+  opacity: 1 !important;
+}
+
+.copy-plugin-button > img {
+  all: initial !important;
+  width: 18px !important;
+  cursor: pointer !important;
+}
+
+.copy-plugin-tooltip {
+  all: initial !important;
+  padding: 3px 5px !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -65px !important;
+  color: white !important;
+  background: black !important;
+  border-radius: 6px !important;
+}
