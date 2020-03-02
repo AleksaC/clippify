@@ -1,4 +1,4 @@
-# Code Copy Extension
+# Clippify
 
 Copying code made easy.
 

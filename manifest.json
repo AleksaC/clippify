@@ -1,5 +1,5 @@
 {
-  "name": "Copy Plugin",
+  "name": "Clippify",
   "version": "0.0.1",
   "description": "Copying code made easy.",
   "permissions": ["storage", "tabs"],
