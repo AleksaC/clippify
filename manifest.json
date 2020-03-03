@@ -1,7 +1,8 @@
 {
   "name": "Clippify",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Copying code made easy.",
+  "icons": { "128": "icon128.png" },
   "permissions": ["storage", "tabs"],
   "browser_action": {
     "default_popup": "src/popup.html"
