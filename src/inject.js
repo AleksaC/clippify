@@ -93,6 +93,23 @@ const insertButton = (preElement) => {
   });
 };
 
+const revealAll = () => {
+  const btns = document.querySelectorAll('.copy-plugin-button');
+  for (const btn of btns) {
+    btn.setAttribute(
+      'style',
+      `${btn.getAttribute('style')} opacity: 1 !important;`
+    );
+  }
+};
+
+const removeAll = () => {
+  const btns = document.querySelectorAll('.copy-plugin-button-ref');
+  for (const btn of btns) {
+    btn.parentNode.removeChild(btn);
+  }
+};
+
 const isBlacklisted = (onTrue, onFalse) => {
   chrome.storage.local.get('blacklist', (data) => {
     try {
@@ -109,12 +126,24 @@ const isBlacklisted = (onTrue, onFalse) => {
   });
 };
 
-const removeAll = () => {
-  const btns = document.querySelectorAll('.copy-plugin-button-ref');
-  for (const btn of btns) {
-    btn.parentNode.removeChild(btn);
+const mutationObserver = new MutationObserver((mutationRecords) => {
+  for (const mutationRecord of mutationRecords) {
+    if (mutationRecord.addedNodes.length > 0) {
+      for (const node of mutationRecord.addedNodes) {
+        if (node.nodeType !== Node.ELEMENT_NODE) continue;
+
+        if (node.nodeName === 'PRE') {
+          insertButton(node);
+        } else {
+          const preChildren = node.querySelectorAll('pre');
+          for (const pre of preChildren) {
+            insertButton(pre);
+          }
+        }
+      }
+    }
   }
-};
+});
 
 isBlacklisted(
   () => {},
@@ -125,25 +154,6 @@ isBlacklisted(
       insertButton(preElement);
     }
 
-    const mutationObserver = new MutationObserver((mutationRecords) => {
-      for (const mutationRecord of mutationRecords) {
-        if (mutationRecord.addedNodes.length > 0) {
-          for (const node of mutationRecord.addedNodes) {
-            if (node.nodeType !== Node.ELEMENT_NODE) continue;
-
-            if (node.nodeName === 'PRE') {
-              insertButton(node);
-            } else {
-              const preChildren = node.querySelectorAll('pre');
-              for (const pre of preChildren) {
-                insertButton(pre);
-              }
-            }
-          }
-        }
-      }
-    });
-
     mutationObserver.observe(document.body, { childList: true, subtree: true });
   }
 );
@@ -152,6 +162,9 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
   if (msg.from === 'popup') {
     if (msg.subject === 'clear') {
       removeAll();
+      mutationObserver.disconnect();
+    } else if (msg.subject === 'show') {
+      revealAll();
     }
   }
 });

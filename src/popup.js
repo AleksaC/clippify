@@ -1,3 +1,19 @@
+const revealOnPage = () => {
+  chrome.tabs.query(
+    {
+      active: true,
+      currentWindow: true,
+    },
+    (tabs) => {
+      chrome.tabs.sendMessage(
+        tabs[0].id,
+        { from: 'popup', subject: 'show' },
+        () => console.log('All buttons revealed.')
+      );
+    }
+  );
+};
+
 const removeFromPage = () => {
   chrome.tabs.query(
     {
@@ -50,6 +66,7 @@ const addToBlacklist = (url) => {
 
 const $ = (selector) => document.querySelector(selector);
 
+$('#show-all').addEventListener('click', revealOnPage);
 $('#clear').addEventListener('click', removeFromPage);
 $('#disable').addEventListener('click', disableOnPage);
 $('#disable-domain').addEventListener('click', disableOnDomain);
