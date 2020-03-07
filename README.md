@@ -38,10 +38,21 @@ Gork those PyTorch tutorials like a pro.
 Heck it even works on many blogs!
 ![Stack Overflow](screenshots/blog.png)
 
+## Features
+
+The extension places a button in top right corner of each code block inside
+the page. The buttons are invisible and only appear when you hover over them.
+On some pages it is difficult to determine where the buttons are placed, so
+there is an option to show all buttons inside the page. You can also remove all
+copy buttons from the page, or add the entire page or domain to a blacklist
+where the extension is blocked.
+
 ## Installation
 
-The recommended way to install the extension is through Web Store. You can also
-clone this repo and load it following the instructions found [here](https://developer.chrome.com/extensions/getstarted).
+The recommended way to install the extension is through Web Store
+(currently pending review, link will be added as soon as it gets published).
+You can also clone this repo and load it following the instructions found
+[here](https://developer.chrome.com/extensions/getstarted).
 By default the extension contains a hot-reload script that whether the source
 files were modified and reloads the extension. To create the release version you
 can use the provided `create-release-version.sh` script.
