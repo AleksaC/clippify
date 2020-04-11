@@ -49,8 +49,7 @@ where the extension is blocked.
 
 ## Installation
 
-The recommended way to install the extension is through Web Store
-(currently pending review, link will be added as soon as it gets published).
+The recommended way to install the extension is through [Web Store](https://chrome.google.com/webstore/detail/clippify/ojdofoikeplghgcomajojeinnjniecld).
 You can also clone this repo and load it following the instructions found
 [here](https://developer.chrome.com/extensions/getstarted).
 By default the extension contains a hot-reload script that whether the source
