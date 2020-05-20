@@ -20,7 +20,7 @@ jobs:
       - name: Upload To Store
         uses: trmcnvn/chrome-addon@v1
         with:
-          extension: '' # TODO: Add once published
+          extension: 'ojdofoikeplghgcomajojeinnjniecld'
           zip: release.zip
           client-id: ${{ secrets.CHROME_CLIENT_ID }}
           client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
