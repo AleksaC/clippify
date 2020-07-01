@@ -27,14 +27,7 @@ const copiedTooltip = `
 `;
 
 const copyToClipboard = (c) => {
-  const textArea = document.createElement('textarea');
-  document.body.appendChild(textArea);
-
-  textArea.value = c.textContent.trim();
-  textArea.select();
-  document.execCommand('Copy');
-
-  textArea.remove();
+  navigator.clipboard.writeText(c.textContent.trim());
 };
 
 const computeOffset = (codeBlock) => {
