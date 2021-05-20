@@ -166,7 +166,13 @@ isBlacklisted(
     const preElements = document.querySelectorAll('pre');
 
     for (const preElement of preElements) {
-      insertButton(preElement);
+      if (
+        !preElement.parentNode.className.includes(
+          'wp-block-syntaxhighlighter-code'
+        )
+      ) {
+        insertButton(preElement);
+      }
     }
 
     mutationObserver.observe(document.body, { childList: true, subtree: true });
