@@ -26,8 +26,21 @@ const copiedTooltip = `
   </div>
 `;
 
-const copyToClipboard = (c) => {
-  navigator.clipboard.writeText(c.textContent.trim());
+const copyToClipboard = (preElement) => {
+  const toCopy = [];
+
+  for (const child of preElement.childNodes) {
+    if (child.className !== 'copy-plugin-button-ref') {
+      toCopy.push(child);
+    }
+  }
+
+  navigator.clipboard.writeText(
+    toCopy
+      .map((el) => el.textContent)
+      .join('')
+      .trim()
+  );
 };
 
 const computeOffset = (codeBlock) => {
