@@ -84,10 +84,10 @@ const insertButton = (preElement) => {
   const cpBtn = copyBtn.querySelector('button');
   setBtnPosition(cpBtn, preElement);
 
-  copyBtn.addEventListener('click', () => {
+  copyBtn.onclick = () => {
     copyToClipboard(preElement);
     flashTooltip(cpBtn);
-  });
+  };
 
   preElement.insertBefore(copyBtn, preElement.firstChild);
 
@@ -137,6 +137,15 @@ const mutationObserver = new MutationObserver((mutationRecords) => {
     if (mutationRecord.addedNodes.length > 0) {
       for (const node of mutationRecord.addedNodes) {
         if (node.nodeType !== Node.ELEMENT_NODE) continue;
+
+        if (node.className === 'copy-plugin-button-ref') {
+          if (!node.onclick) {
+            node.onclick = () => {
+              copyToClipboard(node.parentNode);
+              flashTooltip(node.querySelector('button'));
+            };
+          }
+        }
 
         if (node.nodeName === 'PRE') {
           insertButton(node);
