@@ -1,8 +1,8 @@
-# Clippify
+# Clippify 📋
 
 Copying code made easy.
 
-## About
+## About 📖
 
 A large portion of our work as developers consists of copying code from various
 websites. Some websites provide you with the convenience of copying the entire
@@ -12,7 +12,7 @@ of websites display their code in a similar way (a `pre` element usually
 containing a `code` element) I realized that this could be achieved relatively
 easily through a Chrome extension.
 
-### Screenshots
+### Screenshots 🖼️
 
 To get a glimpse of the extension used in the wild take a look at the following
 screenshots:
@@ -38,7 +38,7 @@ Gork those PyTorch tutorials like a pro.
 Heck it even works on many blogs!
 ![Stack Overflow](screenshots/blog.png)
 
-## Features
+## Features 📝
 
 The extension places a button in top right corner of each code block inside
 the page. The buttons are invisible and only appear when you hover over them.
@@ -47,7 +47,7 @@ there is an option to show all buttons inside the page. You can also remove all
 copy buttons from the page, or add the entire page or domain to a blacklist
 where the extension is blocked.
 
-## Installation
+## Installation ⚙️
 
 The recommended way to install the extension is through [Web Store](https://chrome.google.com/webstore/detail/clippify/ojdofoikeplghgcomajojeinnjniecld).
 You can also clone this repo and load it following the instructions found
@@ -56,10 +56,8 @@ By default the extension contains a hot-reload script that whether the source
 files were modified and reloads the extension. To create the release version you
 can use the provided `create-release-version.sh` script.
 
-## Contact
+## Contact 🙋‍♂️
 
-If you liked this project or for whatever reason want to get in touch with me
-you can do so through my [personal website](https://aleksac.me), where you can
-contact me directly or via social media linked there. I'm always up to something
-cool/useful and if you don't want to miss out you should follow me on twitter:
-<a target="_blank" href="http://twitter.com/aleksa_c_"><img alt='Twitter followers' src="https://img.shields.io/twitter/follow/aleksa_c_.svg?style=social"></a>
+-   [Personal website](https://aleksac.me)
+-   <a target="_blank" href="http://twitter.com/aleksa_c_"><img alt='Twitter followers' src="https://img.shields.io/twitter/follow/aleksa_c_.svg?style=social"></a>
+-   aleksacukovic1@gmail.com
