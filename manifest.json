@@ -1,7 +1,7 @@
 {
   "name": "Clippify",
   "short_name": "clippify",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "manifest_version": 2,
   "author": "Aleksa Ćuković",
   "description": "Copying code made easy.",
