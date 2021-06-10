@@ -18,7 +18,7 @@ jobs:
         run: ./create-release-version.sh
 
       - name: Upload To Store
-        uses: trmcnvn/chrome-addon@v1
+        uses: trmcnvn/chrome-addon@v2
         with:
           extension: 'ojdofoikeplghgcomajojeinnjniecld'
           zip: release.zip
