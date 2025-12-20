@@ -1,0 +1,27 @@
+{
+  "name": "Clippify",
+  "short_name": "clippify",
+  "version": "2.0.0",
+  "manifest_version": 2,
+  "author": "Aleksa Ćuković",
+  "description": "Copying code made easy.",
+  "homepage_url": "https://github.com/AleksaC/clippify",
+  "icons": {
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["storage", "tabs"],
+  "browser_action": {
+    "default_popup": "src/popup.html",
+    "default_title": "Clippify"
+  },
+  "options_ui": {
+    "page": "src/options.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["src/inject.css"],
+      "js": ["lib/webextension-polyfill.js", "src/inject.js"]
+    }
+  ]
+}
